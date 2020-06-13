@@ -40,6 +40,68 @@
 
       _side_note_: output is usually easier than input,
         especially in the beginning
+
+      output: cout << message_part_1 << ... << message_last_part << endl;
+        e.g.
+          `cout << "Hello world!" << endl;`
+      input: cin >> variable_to_store_data_in;
+        e.g.
+          `int x;`
+          `cin >> x;` so x will be whatever the user inputs
+
+    core concept #3:
+      conditionals and loops
+        a mechanism for controlling the flow of a program
+        by changing what happens and how many times it happens
+      couple of important conditionals and loops:
+        while (some_condition) {
+          do some code
+        }
+          the way this works, it does the code in between
+          the curly brackets so long as some_condition is true
+          e.g.
+          ```
+            bool run_while = true;
+            while (run_while == true) {
+              cout << "run_while is true" << endl;
+              // some code
+              run_while = false;
+            }
+          ```
+
+        if (condition) {
+          // do code
+        } else if (some_other_condition) {
+          // do other code
+        } else {
+          // do yet some other code
+        }
+          the way this works is if a condition is met,
+          the code between the curly brackets of the condition
+          is run e.g.
+        ```
+          int x = 3;
+          int y = 3;
+          int z = 3;
+          if (x == 5) {
+            // do code
+          } else if (y == 4) {
+            // do some thing else
+          } else {
+            // default something
+          }
+          // jumps to here
+        ```
+
+        for loop... this one is harder-ish
+          ```
+            // classically this is how its done
+            int someEndValue = 10;
+            for (int iterator = 0; iterator < someEndValue; iterator = iterator + 1) {
+              // do some code
+              // print something
+            }
+          ```
 */
 
 #include <iostream>
@@ -49,6 +111,31 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
+  // this is a string type data structure
+  // that is also constant, its value will always
+  // be "Hello, "
+  const string greeting_message = "Hello, ";
+
+  // this is a varaible string type data structure
+  // its value can be anything
+  string person_name = "Mahmud";
+
+  // this is output!
+  // cout ~ console out
+  cout << greeting_message << person_name << endl;
+
+  person_name = "Fatima";
+  cout << greeting_message << person_name << endl;
+
+  // this is input!
+  // cin ~ console in
+  cout << "Please enter your name!" << endl;
+  cin >> person_name;
+  cout << greeting_message << person_name << endl;
+
+  int num1 = 5;
+  int num2 = 10;
+  cout << "The product of num1 and num2: " << num1 * num2 << endl;
 
   return 0;
 }
